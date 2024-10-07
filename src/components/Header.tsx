@@ -1,6 +1,6 @@
 import { getMonthName } from "../constants/date";
-import ChevronLeft from "../icons/ChevronLeft";
-import ChevronRight from "../icons/ChevronRight";
+import { ChevronLeftIcon, ChevronRightIcon } from "../icons";
+
 
 type HeaderProps = {
   month: number;
@@ -23,7 +23,7 @@ export default function Header({ month, year, onClick }: HeaderProps) {
           })
         }
       >
-        <ChevronLeft />
+        <ChevronLeftIcon />
       </button>
       <span className="text-xl font-medium">
         {monthName} {year}
@@ -39,7 +39,7 @@ export default function Header({ month, year, onClick }: HeaderProps) {
           })
         }
       >
-        <ChevronRight />
+        <ChevronRightIcon />
       </button>
     </div>
   );

@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
-import CalendarIcon from "../icons/Calendar";
+import { CalendarIcon } from "../icons";
+
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
