@@ -29,7 +29,7 @@ export default function Schedule() {
 
   useClickOutside(inputRef, () => setVisible(false));
 
-  const handleInputClick = () => {
+  const handleFocus = () => {
     setVisible(true);
   };
 
@@ -42,10 +42,9 @@ export default function Schedule() {
     setVisible(false);
   };
 
-  console.log(selectedDate)
   const handleButtonClick = ({
     type,
-    month
+    month,
   }: {
     type: string;
     month: number;
@@ -53,13 +52,13 @@ export default function Schedule() {
   }) => {
     if (type === "prevMonth") {
       setMonth((prev) => (prev === 0 ? 11 : prev - 1));
-      if(month === 0 ){
-        setYear( prev => prev - 1);
+      if (month === 0) {
+        setYear((prev) => prev - 1);
       }
     } else if (type === "nextMonth") {
       setMonth((prev) => (prev === 11 ? 0 : prev + 1));
-      if(month === 11 ){
-        setYear( prev => prev + 1);
+      if (month === 11) {
+        setYear((prev) => prev + 1);
       }
     }
   };
@@ -77,14 +76,21 @@ export default function Schedule() {
         <InputField
           className="text-xl"
           defaultValue={inputValue}
-          onClick={handleInputClick}
+          onFocus={handleFocus}
           placeholder="dd/mm/yyyy"
+          inputMode="none"
+          max={10}
         />
         {visible && (
           <>
             <div className="width-30-rem absolute z-10 w-full  shadow-md rounded-md border-t  mt-1">
               <Header month={month} year={year} onClick={handleButtonClick} />
-              <Calendar monthIndex={month} year={year} onClick={handleSelect} selectedDate={selectedDate} />
+              <Calendar
+                monthIndex={month}
+                year={year}
+                onClick={handleSelect}
+                selectedDate={selectedDate}
+              />
             </div>
           </>
         )}
