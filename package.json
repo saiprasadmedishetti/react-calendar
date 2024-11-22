@@ -1,7 +1,7 @@
 {
-  "name": "calendar2",
+  "name": "react-calendar",
   "private": true,
-  "homepage": "https://saiprasadmedishetti.github.io/calendar2",
+  "homepage": "https://saiprasadmedishetti.github.io/react-calendar",
   "version": "0.1.0",
   "type": "module",
   "scripts": {
